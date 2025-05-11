@@ -1,0 +1,19 @@
+{
+  "categorias": [
+    {
+      "id": "2",
+      "nome": "Shoppings",
+      "descricao": "Comprar e passeios"
+    },
+    {
+      "id": "7f26",
+      "nome": "Restaurantes",
+      "descricao": "Lugares para comer."
+    },
+    {
+      "id": "f435",
+      "nome": "Praias",
+      "descricao": "Praias para banhos"
+    }
+  ]
+}
