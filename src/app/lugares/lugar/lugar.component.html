@@ -1,0 +1,74 @@
+<div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg mt-6">
+  <h2 class="text-2xl font-semibold text-gray-700 mb-4">Novo Lugar</h2>
+  <hr class="p-2" />
+  <form id="lugarForm" [formGroup]="camposForm" (ngSubmit)="salvar()">
+
+    <div class="mb-4">
+      <app-input-primary [label]="'Nome do Lugar'" [type]="'text'" [placeholder]="'Ex: Praia do Sol'" id="nome"
+        name="nome" formControlName="nome" required>
+      </app-input-primary>
+      @if(isCampoInvalido('nome')){
+      <span class="text-redColor text-sm">
+        Campo Obrigatório
+      </span>
+      }
+    </div>
+    
+    <div class="mb-4">
+      <label for="categoria" class="block text-text font-medium mb-2">Categoria</label>
+      <select name="categoria" id="categoria" formControlName="categoria"
+        class="w-full p-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-primary">
+        <option [value]="">Selecione uma categoria</option>
+        @for(c of categorias; track c.id){
+        <option [value]="c.id">{{ c.nome }}</option>
+        }
+      </select>
+      @if(isCampoInvalido('categoria')){
+      <span class="text-redColor text-sm">
+        Campo Obrigatório
+      </span>
+      }
+    </div>
+
+    <div class="mb-4">
+      <app-input-primary [label]="'Localização do Lugar'" [type]="'text'" [placeholder]="'Ex: São Paulo'"
+        id="localizacao" name="localizacao" formControlName="localizacao" required>
+      </app-input-primary>
+      @if(isCampoInvalido('localizacao')){
+      <span class="text-redColor text-sm">
+        Campo Obrigatório
+      </span>
+      }
+    </div>
+    <div class="mb-4">
+
+      <app-input-primary [label]="'Foto'" [type]="'text'" [placeholder]="'Ex: http://exemplo.com/foto.jpg'"
+        id="urlFoto" name="urlFoto" formControlName="urlFoto" required>
+      </app-input-primary>
+      @if(isCampoInvalido('urlFoto')){
+      <span class="text-redColor text-sm">
+        Campo Obrigatório
+      </span>
+      }
+    </div>
+
+    <div class="mb-4">
+      <label for="avaliacao" class="block text-text font-medium mb-2">Avaliação</label>
+       <select name="avaliacao" id="avaliacao" formControlName="avaliacao"
+        class="w-full p-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-primary">
+        <option [value]="">Selecione uma avaliação</option>
+        <option [value]="1">1 - Ruim</option>
+        <option [value]="2">2 - Bom</option>
+        <option [value]="3">3 - Regular</option>
+        <option [value]="4">4 - Muito Bom</option>
+        <option [value]="5">5 - Excelente</option>
+      </select>
+      @if(isCampoInvalido('avaliacao')){
+      <span class="text-redColor text-sm">
+        Campo Obrigatório
+      </span>
+      }
+    </div>
+    <app-button-primary type="submit">Cadastrar Lugar</app-button-primary>
+  </form>
+</div>
