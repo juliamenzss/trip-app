@@ -21,18 +21,22 @@ export class CategoriaComponent {
   salvar() {
     this.camposForm.markAllAsTouched();
 
-    if(this.camposForm.valid){
-      this.service.salvar(this.camposForm.value).pipe(
-        take(1), 
-        tap(() => {
-        this.camposForm.reset(); 
-      }),
-      catchError((erro) => {
-        console.error('Erro ao salvar:', erro);
-        return of(null); 
-      })
-    ).subscribe();
-  }}
+    if (this.camposForm.valid) {
+      this.service
+        .salvar(this.camposForm.value)
+        .pipe(
+          take(1),
+          tap(() => {
+            this.camposForm.reset();
+          }),
+          catchError((erro) => {
+            console.error('Erro ao salvar:', erro);
+            return of(null);
+          })
+        )
+        .subscribe();
+    }
+  }
 
   isCampoInvalido(nomeCampo: string): boolean {
     const campo = this.camposForm.get(nomeCampo);
