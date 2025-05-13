@@ -13,8 +13,6 @@ import { LugaresModule } from '../lugares/lugares.module';
   imports: [
     CommonModule,
     TemplateRoutingModule,
-    CategoriasModule,
-    LugaresModule
   ]
 })
 export class TemplateModule { }

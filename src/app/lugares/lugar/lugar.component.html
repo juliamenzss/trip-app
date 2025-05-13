@@ -20,7 +20,7 @@
         class="w-full p-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-primary">
         <option [value]="">Selecione uma categoria</option>
         @for(c of categorias; track c.id){
-        <option [value]="c.id">{{ c.nome }}</option>
+        <option [value]="c.nome">{{ c.nome }}</option>
         }
       </select>
       @if(isCampoInvalido('categoria')){
