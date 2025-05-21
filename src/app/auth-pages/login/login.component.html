@@ -1,0 +1,36 @@
+<main class="flex min-h-screen items-center justify-center bg-primary">
+    <section class="w-full max-w-md bg-white rounded-xl shadow-lg p-8 flex flex-col items-center gap-6">
+        <div (click)="handleNavigateHome()" class="absolute top-9 left-9 cursor-pointer">
+            <span class="arrow">
+                <mat-icon class="ml-2 ">arrow_back</mat-icon> 
+            </span>
+        </div>
+
+        <h2 class="text-3xl text-gray-700 font-bold">Vamos começar!</h2>
+        <h3 class="text-base text-gray-700 font-normal">Entre com suas credenciais e acesse sua conta!</h3>
+        <form [formGroup]="loginForm" class="w-full flex flex-col gap-4">
+            <app-input-primary [label]="'Email'" [type]="'email'" [placeholder]="'Ex: joãoalberto@example.com'"
+                id="email" name="email" formControlName="email" required>
+            </app-input-primary>
+
+            <app-input-primary [label]="'Senha'" [type]="'password'" id="password" name="password"
+                formControlName="password" [placeholder]="'********'" required>
+            </app-input-primary>
+            <span class="text-gray-500 text-xs flex justify-end pr-2 cursor-pointer hover:text-blue-500">Esqueceu sua senha?</span>
+
+            <app-button-primary size="large" class="flex items-center justify-center pt-2" type="submit">
+                Entrar em sua conta
+            </app-button-primary>
+            <div
+                class="flex items-center justify-center gap-4 text-[12px] text-text-color font-normal uppercase w-full">
+                <div class="flex-grow h-[0.4px] bg-gray-400"></div>
+                <span>ou</span>
+                <div class="flex-grow h-[0.4px] bg-gray-400"></div>
+            </div>
+            <app-button-primary routerLink="/auth/register" type="button" color="secondary" size="large" class="flex items-center justify-center">
+                Cadastrar sua conta
+            </app-button-primary>
+        </form>
+
+    </section>
+</main>
