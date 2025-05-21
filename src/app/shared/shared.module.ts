@@ -6,11 +6,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputPrimaryComponent } from './components/input-primary/input-primary.component';
 import { ButtonPrimaryComponent } from './components/button-primary/button-primary.component';
 
-
 @NgModule({
   declarations: [
     InputPrimaryComponent,
-    ButtonPrimaryComponent
+    ButtonPrimaryComponent,
   ],
   imports: [
     CommonModule,
@@ -22,7 +21,7 @@ import { ButtonPrimaryComponent } from './components/button-primary/button-prima
     InputPrimaryComponent, 
     ReactiveFormsModule,
     InputPrimaryComponent,
-    ButtonPrimaryComponent
+    ButtonPrimaryComponent,
   ]
 })
 export class SharedModule { }
