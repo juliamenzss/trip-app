@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonPrimaryComponent {
 @Input() type: 'submit' | 'button' = 'submit';
-
+@Input() size: 'default' | 'large' = 'default';
+@Input() color: 'primary' | 'secondary' | 'danger' = 'primary';
 }
